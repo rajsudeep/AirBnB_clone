@@ -145,11 +145,14 @@ class HBNBCommand(cmd.Cmd):
                     count += 1
             print(count)
 
+
     def do_User(self, line):
         if line == ".all()":
             self.do_all("User")
-        elif line == ".count()":
+        if line == ".count()":
             self.do_count("User")
+        if line == ".show(self.id)":
+            self.do_show()
 
     def do_State(self, line):
         if line == ".all()":
@@ -180,6 +183,13 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("Review")
         elif line == ".count()":
             self.do_count("Review")
+
+    def do_BaseModel(self, line):
+        if line == ".all()":
+            self.do_all("BaseModel")
+        elif line ==".count()":
+            self.do_count("BaseModel")
+
 
     def do_quit(self, line):
         """ exits the program using quit """
